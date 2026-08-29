@@ -2,32 +2,50 @@ extends Node2D
 
 const ROOM_SCENE = preload("res://Level/Room.tscn")
 const N = 255 # code for no room
+const NUM_ROOMS = 10 # number of rooms to generate
+const CARDINALS = [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
 
-var rooms: Array[Room] = []
-
-var adjacency_graph = [
-   # N, S, E, W
-	[N, 3, 1, N],
-	[N, 4, 2, 0],
-	[N, 5, N, 1],
-	[0, 6, 4, N],
-	[1, 7, 5, 2],
-	[2, 8, N, 4],
-	[3, N, 7, N],
-	[4, N, 8, 6],
-	[5, N, N, 7],
-]
+var rooms: Dictionary = {}
 
 func _ready() -> void:
-	for x in range(0, 3):
-		for y in range(0, 3):
-			create_room(x, y)
+	generate()
 
 
-func create_room(x: int, y: int) -> void:
-	var room_index = y * 3 + x
+func generate() -> void:
+	var prev_coord = Vector2i.ZERO
+	var next_coord = prev_coord + CARDINALS.pick_random()
+	var rooms_left = NUM_ROOMS - 1
+	create_room_at(prev_coord)
+	while rooms_left > 0:
+		var room_created = create_room(prev_coord, next_coord)
+		prev_coord = next_coord
+		next_coord = prev_coord + CARDINALS.pick_random()
+		if room_created:
+			rooms_left -= 1
+	for key in rooms:
+		var room = rooms[key]
+		room.grid_coordinates = key
+		room.set_sprite()
+		add_child(room)
+
+
+func create_room(prev_coord: Vector2i, next_coord: Vector2i) -> bool:
+	if rooms.has(next_coord):
+		connect_rooms(prev_coord, next_coord)
+		return false
+	else:
+		create_room_at(next_coord)
+		connect_rooms(prev_coord, next_coord)
+		return true
+		
+
+func create_room_at(next_coord: Vector2i) -> void:
 	var room = ROOM_SCENE.instantiate()
-	room.grid_coordinates = Vector2(x, y)
-	room.set_sprite(adjacency_graph[room_index])
-	rooms.append(room)
-	add_child(room)
+	rooms[next_coord] = room
+
+
+func connect_rooms(prev_coord: Vector2i, next_coord: Vector2i) -> void:
+	var prev_door = next_coord - prev_coord
+	var next_door = prev_coord - next_coord
+	rooms[next_coord].add_door(next_door)
+	rooms[prev_coord].add_door(prev_door)
