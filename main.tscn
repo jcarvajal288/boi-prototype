@@ -7,4 +7,3 @@
 [node name="Level" parent="." unique_id=1600387226 instance=ExtResource("1_ig7tw")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=905337594]
-zoom = Vector2(2, 2)

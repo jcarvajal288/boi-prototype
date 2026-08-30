@@ -25,7 +25,7 @@ func generate() -> void:
 	for key in rooms:
 		var room = rooms[key]
 		room.grid_coordinates = key
-		room.set_sprite()
+		room.set_room_type()
 		add_child(room)
 
 

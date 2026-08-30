@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://d2xciyqci2mje"]
 
-[ext_resource type="Texture2D" uid="uid://cbw35ndkm320g" path="res://Level/_art/rooms.png" id="1_ojcdm"]
 [ext_resource type="Script" uid="uid://brvrbcuv1psde" path="res://Level/room.gd" id="2_thr6f"]
 
-[node name="Room" type="Sprite2D" unique_id=139997382]
-texture = ExtResource("1_ojcdm")
-hframes = 16
+[node name="Room" type="Node2D" unique_id=356613402]
 script = ExtResource("2_thr6f")

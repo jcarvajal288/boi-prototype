@@ -1,47 +1,69 @@
-class_name Room extends Sprite2D
+class_name Room extends Node2D
 
 const N = 255
 
 var grid_coordinates: Vector2 = Vector2.ZERO
 var doors: Array[bool] = [false, false, false, false] # N, S, E, W
+var rooms: Array[PackedScene] = [
+	preload("res://Level/Rooms/Null_Room.tscn"),
+	preload("res://Level/Rooms/N_Room.tscn"),
+	preload("res://Level/Rooms/S_Room.tscn"),
+	preload("res://Level/Rooms/E_Room.tscn"),
+	preload("res://Level/Rooms/W_Room.tscn"),
+	preload("res://Level/Rooms/NE_Room.tscn"),
+	preload("res://Level/Rooms/SE_Room.tscn"),
+	preload("res://Level/Rooms/SW_Room.tscn"),
+	preload("res://Level/Rooms/NW_Room.tscn"),
+	preload("res://Level/Rooms/NS_Room.tscn"),
+	preload("res://Level/Rooms/EW_Room.tscn"),
+	preload("res://Level/Rooms/NSW_Room.tscn"),
+	preload("res://Level/Rooms/NEW_Room.tscn"),
+	preload("res://Level/Rooms/NSE_Room.tscn"),
+	preload("res://Level/Rooms/SEW_Room.tscn"),
+	preload("res://Level/Rooms/NSEW_Room.tscn")
+]
 
-const ROOM_SIZE = 16
+const ROOM_WIDTH = 160
+const ROOM_HEIGHT = 128
 
 func _ready() -> void:
-	global_position = Vector2(grid_coordinates.x * ROOM_SIZE, grid_coordinates.y * ROOM_SIZE)
+	global_position = Vector2(grid_coordinates.x * ROOM_WIDTH, grid_coordinates.y * ROOM_HEIGHT)
 
 
-func set_sprite() -> void:
+func set_room_type() -> void:
+	var room_index = 0
 	if doors == [true, false, false, false]:
-		frame = 1
+		room_index = 1
 	elif doors == [false, true, false, false]:
-		frame = 2
+		room_index = 2
 	elif doors == [false, false, true, false]:
-		frame = 3
+		room_index = 3
 	elif doors == [false, false, false, true]:
-		frame = 4
+		room_index = 4
 	elif doors == [true, false, true, false]:
-		frame = 5
+		room_index = 5
 	elif doors == [false, true, true, false]:
-		frame = 6
+		room_index = 6
 	elif doors == [false, true, false, true]:
-		frame = 7
+		room_index = 7
 	elif doors == [true, false, false, true]:
-		frame = 8
+		room_index = 8
 	elif doors == [true, true, false, false]:
-		frame = 9
+		room_index = 9
 	elif doors == [false, false, true, true]:
-		frame = 10
+		room_index = 10
 	elif doors == [true, true, false, true]:
-		frame = 11
+		room_index = 11
 	elif doors == [true, false, true, true]:
-		frame = 12
+		room_index = 12
 	elif doors == [true, true, true, false]:
-		frame = 13
+		room_index = 13
 	elif doors == [false, true, true, true]:
-		frame = 14
+		room_index = 14
 	elif doors == [true, true, true, true]:
-		frame = 15
+		room_index = 15
+	var room_node = rooms[room_index].instantiate()
+	add_child(room_node)
 
 
 func add_door(direction: Vector2i) -> void:
