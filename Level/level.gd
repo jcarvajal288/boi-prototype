@@ -56,6 +56,21 @@ func connect_rooms(prev_coord: Vector2i, next_coord: Vector2i) -> void:
 
 func show_current_room():
 	if current_room != null:
-		current_room.queue_free()
+		self.remove_child(current_room)
 	current_room = rooms[current_room_coords]
 	add_child(current_room)
+
+
+func change_room(direction: Vector2i) -> void:
+	var new_coords = current_room_coords
+	if direction == Vector2i.UP:
+		new_coords += Vector2i.UP
+	elif direction == Vector2i.DOWN:
+		new_coords += Vector2i.DOWN
+	elif direction == Vector2i.LEFT:
+		new_coords += Vector2i.LEFT
+	elif direction == Vector2i.RIGHT:
+		new_coords += Vector2i.RIGHT
+	if rooms.keys().has(new_coords):
+		current_room_coords = new_coords
+		show_current_room()
