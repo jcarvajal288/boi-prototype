@@ -7,8 +7,12 @@ const CARDINALS = [Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT]
 
 var rooms: Dictionary = {}
 
+var current_room_coords = Vector2i.ZERO
+var current_room: Node2D = null
+
 func _ready() -> void:
 	generate()
+	show_current_room()
 
 
 func generate() -> void:
@@ -26,7 +30,6 @@ func generate() -> void:
 		var room = rooms[key]
 		room.grid_coordinates = key
 		room.set_room_type()
-		add_child(room)
 
 
 func create_room(prev_coord: Vector2i, next_coord: Vector2i) -> bool:
@@ -49,3 +52,10 @@ func connect_rooms(prev_coord: Vector2i, next_coord: Vector2i) -> void:
 	var next_door = prev_coord - next_coord
 	rooms[next_coord].add_door(next_door)
 	rooms[prev_coord].add_door(prev_door)
+
+
+func show_current_room():
+	if current_room != null:
+		current_room.queue_free()
+	current_room = rooms[current_room_coords]
+	add_child(current_room)

@@ -27,7 +27,8 @@ const ROOM_WIDTH = 160
 const ROOM_HEIGHT = 128
 
 func _ready() -> void:
-	global_position = Vector2(grid_coordinates.x * ROOM_WIDTH, grid_coordinates.y * ROOM_HEIGHT)
+	pass
+	# global_position = Vector2(grid_coordinates.x * ROOM_WIDTH, grid_coordinates.y * ROOM_HEIGHT)
 
 
 func set_room_type() -> void:
