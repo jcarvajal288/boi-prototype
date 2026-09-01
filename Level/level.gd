@@ -13,6 +13,7 @@ var current_room: Node2D = null
 func _ready() -> void:
 	generate()
 	show_current_room()
+	Global.change_room.connect(on_change_room)
 
 
 func generate() -> void:
@@ -61,7 +62,7 @@ func show_current_room():
 	add_child(current_room)
 
 
-func change_room(direction: Vector2i) -> void:
+func on_change_room(direction: Vector2i) -> void:
 	var new_coords = current_room_coords
 	if direction == Vector2i.UP:
 		new_coords += Vector2i.UP

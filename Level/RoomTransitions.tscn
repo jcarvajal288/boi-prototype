@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://65tk5i07jjv4"]
+
+[ext_resource type="Script" uid="uid://dj2vqvev84dvg" path="res://Level/room_transitions.gd" id="1_hf22y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0tkx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_se1jv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ya2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuhmt"]
+
+[node name="RoomTransitions" type="Node2D" unique_id=1178658644]
+script = ExtResource("1_hf22y")
+
+[node name="NorthExit" type="Area2D" parent="." unique_id=1076299506]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NorthExit" unique_id=1017892078]
+position = Vector2(80, -10)
+shape = SubResource("RectangleShape2D_r0tkx")
+
+[node name="SouthExit" type="Area2D" parent="." unique_id=1497813033]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SouthExit" unique_id=856673254]
+position = Vector2(80, 138)
+shape = SubResource("RectangleShape2D_se1jv")
+
+[node name="EastExit" type="Area2D" parent="." unique_id=1558358055]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastExit" unique_id=2087253995]
+position = Vector2(170, 64)
+shape = SubResource("RectangleShape2D_p6ya2")
+
+[node name="WestExit" type="Area2D" parent="." unique_id=1581236225]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WestExit" unique_id=1713766835]
+position = Vector2(-10, 64)
+shape = SubResource("RectangleShape2D_fuhmt")
+
+[node name="NorthEntrance" type="Marker2D" parent="." unique_id=1392222761]
+position = Vector2(80, 24)
+gizmo_extents = 8.0
+
+[node name="SouthEntrance" type="Marker2D" parent="." unique_id=639126380]
+position = Vector2(80, 104)
+gizmo_extents = 8.0
+
+[node name="EastEntrance" type="Marker2D" parent="." unique_id=295752784]
+position = Vector2(136, 64)
+gizmo_extents = 8.0
+
+[node name="WestEntrance" type="Marker2D" parent="." unique_id=167258704]
+position = Vector2(25, 64)
+gizmo_extents = 8.0

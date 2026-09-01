@@ -284,7 +284,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fuhmt"]
-radius = 8.0
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1520918855]
 script = ExtResource("1_4x03u")
