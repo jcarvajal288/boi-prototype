@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d1kewo6i1uod2"]
+
+[ext_resource type="Texture2D" uid="uid://bwdvmx536ew5w" path="res://Items/FacingShotSingle/_art/facing_shot_single.png" id="1_ccnuv"]
+[ext_resource type="Script" uid="uid://jx7vc4r2t551" path="res://Items/FacingShotSingle/facing_shot_single.gd" id="2_c42j0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuhmt"]
+radius = 8.0
+
+[node name="FacingShotSingle" type="Sprite2D" unique_id=105658205]
+texture = ExtResource("1_ccnuv")
+script = ExtResource("2_c42j0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=441986044]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1332765476]
+shape = SubResource("CircleShape2D_fuhmt")

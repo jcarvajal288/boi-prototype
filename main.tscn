@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://65tk5i07jjv4" path="res://Level/RoomTransitions.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cwlkffg5o1ley" path="res://Actors/Player/Player.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ckof1uoftd7d5" path="res://UI/StatusBar/StatusBar.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://d1kewo6i1uod2" path="res://Items/FacingShotSingle/FacingShotSingle.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D" unique_id=258344990]
 script = ExtResource("1_0xm2m")
@@ -20,3 +21,6 @@ position = Vector2(80, 72)
 position = Vector2(83, 69)
 
 [node name="StatusBar" parent="." unique_id=1756467584 instance=ExtResource("5_lquwl")]
+
+[node name="FacingShotSingle" parent="." unique_id=105658205 instance=ExtResource("6_7mycd")]
+position = Vector2(51, 43)
