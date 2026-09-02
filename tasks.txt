@@ -1,0 +1,8 @@
+x Randomly generate level layout
+x Add player
+x Player moves between rooms
+x Add Status Bar
+_ Add Single Shot powerup
+    _ Add selection screen when Single Shot powerup is picked up
+    _ Set Single Shot in either B or A button slot
+    _ Fire a bullet when selected button is pressed

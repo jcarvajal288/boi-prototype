@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ckof1uoftd7d5"]
+
+[ext_resource type="Texture2D" uid="uid://dpusotqa10i5b" path="res://UI/StatusBar/_art/status_bar.png" id="1_k6gla"]
+
+[node name="StatusBar" type="CanvasLayer" unique_id=1756467584]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1068657265]
+offset_top = 128.0
+offset_right = 160.0
+offset_bottom = 144.0
+texture = ExtResource("1_k6gla")
+stretch_mode = 2
