@@ -4,6 +4,7 @@ x Player moves between rooms
 x Add Status Bar
 + Single Shot powerup
     x Add single shot powerup to level
+    x Put single shot data in a resource
     _ Add selection screen when Single Shot powerup is picked up
     _ Set Single Shot in either B or A button slot
     _ Fire a bullet when selected button is pressed

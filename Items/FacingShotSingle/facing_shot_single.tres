@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EquippableItemData" format=3 uid="uid://1fkis7i80211"]
+
+[ext_resource type="Script" uid="uid://c2brophrcsdho" path="res://Items/equippable_item_data.gd" id="1_dudth"]
+[ext_resource type="Texture2D" uid="uid://bwdvmx536ew5w" path="res://Items/FacingShotSingle/_art/facing_shot_single.png" id="1_ksgq5"]
+
+[resource]
+script = ExtResource("1_dudth")
+name = "FacingShotSingle"
+description = "Shoots one bullet in the direction the player faces."
+image = ExtResource("1_ksgq5")
+metadata/_custom_type_script = "uid://c2brophrcsdho"
