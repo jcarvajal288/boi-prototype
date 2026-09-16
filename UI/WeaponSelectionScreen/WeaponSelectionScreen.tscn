@@ -15,3 +15,9 @@ texture = ExtResource("1_nlfe5")
 [node name="NewItemSprite" type="Sprite2D" parent="." unique_id=47510994]
 z_index = 15
 position = Vector2(80, 56)
+
+[node name="BItemSprite" type="Sprite2D" parent="." unique_id=388650519]
+position = Vector2(44, 88)
+
+[node name="AItemSprite" type="Sprite2D" parent="." unique_id=1254818790]
+position = Vector2(116, 88)
