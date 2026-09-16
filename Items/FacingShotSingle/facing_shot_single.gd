@@ -10,5 +10,5 @@ func _ready() -> void:
 
 func on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("Facing Shot Single picked up")
+		Global.open_weapon_selection_screen.emit()
 		queue_free()

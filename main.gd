@@ -1,12 +1,12 @@
 extends Node2D
 
+const WEAPON_SELECTION_SCENE = preload("res://UI/WeaponSelectionScreen/WeaponSelectionScreen.tscn")
 
-# func _process(_delta: float) -> void:
-# 	if Input.is_action_just_pressed("ui_up"):
-# 		$Level.change_room(Vector2i.UP)
-# 	elif Input.is_action_just_pressed("ui_down"):
-# 		$Level.change_room(Vector2i.DOWN)
-# 	elif Input.is_action_just_pressed("ui_left"):
-# 		$Level.change_room(Vector2i.LEFT)
-# 	elif Input.is_action_just_pressed("ui_right"):
-# 		$Level.change_room(Vector2i.RIGHT)
+func _ready() -> void:
+	Global.open_weapon_selection_screen.connect(on_weapon_select)
+
+
+func on_weapon_select() -> void:
+	var screen = WEAPON_SELECTION_SCENE.instantiate()
+	add_child(screen)
+	

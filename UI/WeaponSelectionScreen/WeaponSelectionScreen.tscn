@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ew41atpyd14e"]
+
+[ext_resource type="Texture2D" uid="uid://we1o86x0eraq" path="res://UI/_art/weapon_selection_screen.png" id="1_nlfe5"]
+
+[node name="WeaponSelectionScreen" type="CanvasLayer" unique_id=1225796246]
+layer = 10
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1435813650]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_nlfe5")
