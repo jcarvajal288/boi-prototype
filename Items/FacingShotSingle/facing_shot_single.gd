@@ -10,5 +10,5 @@ func _ready() -> void:
 
 func on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		Global.open_weapon_selection_screen.emit()
+		Global.open_weapon_selection_screen.emit(item_data)
 		queue_free()
