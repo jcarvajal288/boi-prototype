@@ -10,3 +10,9 @@ offset_right = 160.0
 offset_bottom = 144.0
 texture = ExtResource("1_k6gla")
 stretch_mode = 2
+
+[node name="BItemSprite" type="Sprite2D" parent="." unique_id=814458462]
+position = Vector2(13, 136)
+
+[node name="AItemSprite" type="Sprite2D" parent="." unique_id=838284821]
+position = Vector2(39, 136)

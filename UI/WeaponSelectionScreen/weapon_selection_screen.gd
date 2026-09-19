@@ -16,6 +16,8 @@ func _process(_delta: float) -> void:
 		if moved_to_b_slot:
 			queue_free()
 			Global.pause_game.emit(false)
+			Global.b_button_slot = new_item
+			Global.update_status_bar.emit()
 		else:
 			$NewItemSprite.texture = null
 			$BItemSprite.texture = new_item.image
@@ -26,6 +28,8 @@ func _process(_delta: float) -> void:
 		if moved_to_a_slot:
 			queue_free()
 			Global.pause_game.emit(false)
+			Global.a_button_slot = new_item
+			Global.update_status_bar.emit()
 		else:
 			$NewItemSprite.texture = null
 			$BItemSprite.texture = null

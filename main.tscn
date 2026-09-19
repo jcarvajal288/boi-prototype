@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cwlkffg5o1ley" path="res://Actors/Player/Player.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ckof1uoftd7d5" path="res://UI/StatusBar/StatusBar.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://d1kewo6i1uod2" path="res://Items/FacingShotSingle/FacingShotSingle.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://hluyb3xdpmul" path="res://UI/StatusBar/status_bar.gd" id="8_5vw27"]
 
 [node name="Main" type="Node2D" unique_id=258344990]
 script = ExtResource("1_0xm2m")
@@ -28,3 +29,4 @@ position = Vector2(83, 69)
 position = Vector2(45, 40)
 
 [node name="StatusBar" parent="." unique_id=1756467584 instance=ExtResource("5_lquwl")]
+script = ExtResource("8_5vw27")
