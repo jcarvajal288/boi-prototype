@@ -8,13 +8,14 @@ var moved_to_a_slot = false
 
 func _ready() -> void:
 	$NewItemSprite.texture = new_item.image
+	Global.pause_game.emit(true)
 
-# TODO: player is still active while this is happening. pause game
 
 func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("b_button")):
 		if moved_to_b_slot:
 			queue_free()
+			Global.pause_game.emit(false)
 		else:
 			$NewItemSprite.texture = null
 			$BItemSprite.texture = new_item.image
@@ -24,6 +25,7 @@ func _process(_delta: float) -> void:
 	elif (Input.is_action_just_pressed("a_button")):
 		if moved_to_a_slot:
 			queue_free()
+			Global.pause_game.emit(false)
 		else:
 			$NewItemSprite.texture = null
 			$BItemSprite.texture = null

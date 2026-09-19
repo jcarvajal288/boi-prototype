@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://svujxx5dhwia" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://wtdw5sh2nyci" path="res://Level/Level.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cl84k41cmakou" path="res://gameplay.gd" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://65tk5i07jjv4" path="res://Level/RoomTransitions.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cwlkffg5o1ley" path="res://Actors/Player/Player.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ckof1uoftd7d5" path="res://UI/StatusBar/StatusBar.tscn" id="5_lquwl"]
@@ -10,17 +11,20 @@
 [node name="Main" type="Node2D" unique_id=258344990]
 script = ExtResource("1_0xm2m")
 
-[node name="Level" parent="." unique_id=1600387226 instance=ExtResource("1_ig7tw")]
+[node name="Gameplay" type="Node2D" parent="." unique_id=1387905157]
+script = ExtResource("2_272bh")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=905337594]
+[node name="Level" parent="Gameplay" unique_id=1600387226 instance=ExtResource("1_ig7tw")]
+
+[node name="Camera2D" type="Camera2D" parent="Gameplay" unique_id=905337594]
 position = Vector2(80, 72)
 
-[node name="RoomTransitions" parent="." unique_id=1178658644 instance=ExtResource("3_1bvp3")]
+[node name="RoomTransitions" parent="Gameplay" unique_id=1178658644 instance=ExtResource("3_1bvp3")]
 
-[node name="Player" parent="." unique_id=1520918855 instance=ExtResource("3_h2yge")]
+[node name="Player" parent="Gameplay" unique_id=1520918855 instance=ExtResource("3_h2yge")]
 position = Vector2(83, 69)
 
-[node name="StatusBar" parent="." unique_id=1756467584 instance=ExtResource("5_lquwl")]
+[node name="FacingShotSingle" parent="Gameplay" unique_id=105658205 instance=ExtResource("6_7mycd")]
+position = Vector2(45, 40)
 
-[node name="FacingShotSingle" parent="." unique_id=105658205 instance=ExtResource("6_7mycd")]
-position = Vector2(51, 43)
+[node name="StatusBar" parent="." unique_id=1756467584 instance=ExtResource("5_lquwl")]
