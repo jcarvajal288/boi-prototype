@@ -11,25 +11,27 @@ func _ready() -> void:
 	Global.pause_game.emit(true)
 
 
-func _process(_delta: float) -> void:
-	if (Input.is_action_just_pressed("b_button")):
+func _unhandled_input(event: InputEvent) -> void:
+	if (event.is_action_pressed("b_button", false, false)):
 		if moved_to_b_slot:
 			queue_free()
 			Global.pause_game.emit(false)
 			Global.b_button_slot = new_item
 			Global.update_status_bar.emit()
+			get_viewport().set_input_as_handled()
 		else:
 			$NewItemSprite.texture = null
 			$BItemSprite.texture = new_item.image
 			$AItemSprite.texture = null
 			moved_to_b_slot = true
 			moved_to_a_slot = false
-	elif (Input.is_action_just_pressed("a_button")):
+	elif (event.is_action_pressed("a_button", false, false)):
 		if moved_to_a_slot:
 			queue_free()
 			Global.pause_game.emit(false)
 			Global.a_button_slot = new_item
 			Global.update_status_bar.emit()
+			get_viewport().set_input_as_handled()
 		else:
 			$NewItemSprite.texture = null
 			$BItemSprite.texture = null

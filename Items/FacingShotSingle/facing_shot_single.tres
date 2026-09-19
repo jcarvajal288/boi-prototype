@@ -8,4 +8,5 @@ script = ExtResource("1_dudth")
 name = "FacingShotSingle"
 description = "Shoots one bullet in the direction the player faces."
 image = ExtResource("1_ksgq5")
+function = "facing_shot_single"
 metadata/_custom_type_script = "uid://c2brophrcsdho"
