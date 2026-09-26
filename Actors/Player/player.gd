@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+const BULLET_SCENE = preload("res://Projectiles/Bullet/Bullet.tscn")
+
 const SPEED = 50
 
 var facing = "Down"
@@ -42,4 +44,15 @@ func placeholder() -> void:
 
 
 func facing_shot_single() -> void:
-	print("facing shot single")
+	var bullet = BULLET_SCENE.instantiate()
+	if facing == "Up":
+		bullet.direction = Vector2.UP
+	elif facing == "Down":
+		bullet.direction = Vector2.DOWN
+	elif facing == "Left":
+		bullet.direction = Vector2.LEFT
+	elif facing == "Right":
+		bullet.direction = Vector2.RIGHT
+	bullet.global_position = global_position
+	Global.add_node_to_game.emit(bullet)
+	

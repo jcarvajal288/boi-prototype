@@ -2,9 +2,10 @@ x Randomly generate level layout
 x Add player
 x Player moves between rooms
 x Add Status Bar
-+ Single Shot powerup
+x Single Shot powerup
     x Add single shot powerup to level
     x Put single shot data in a resource
     x Add selection screen when Single Shot powerup is picked up
     x Set Single Shot in either B or A button slot
-    _ Fire a bullet when selected button is pressed
+    x Fire a bullet when selected button is pressed
+_ cull bullets that hit walls/edge of map
