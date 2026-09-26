@@ -8,4 +8,5 @@ x Single Shot powerup
     x Add selection screen when Single Shot powerup is picked up
     x Set Single Shot in either B or A button slot
     x Fire a bullet when selected button is pressed
-_ cull bullets that hit walls/edge of map
+x cull bullets that hit walls/edge of map
+_ add bat enemy
