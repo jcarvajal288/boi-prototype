@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cfor3f04gn3er"]
+
+[ext_resource type="Texture2D" uid="uid://174xrh7sjmt4" path="res://Actors/Bat/_art/bat.png" id="1_xnssv"]
+[ext_resource type="Script" uid="uid://cb7jmc5ao72dd" path="res://Actors/Bat/bat.gd" id="1_y3qvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3qvl"]
+atlas = ExtResource("1_xnssv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elq6n"]
+atlas = ExtResource("1_xnssv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6ya2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3qvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elq6n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuhmt"]
+radius = 4.1231055
+
+[node name="Bat" type="CharacterBody2D" unique_id=928262225]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_y3qvl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=373814730]
+sprite_frames = SubResource("SpriteFrames_p6ya2")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1142044672]
+shape = SubResource("CircleShape2D_fuhmt")
