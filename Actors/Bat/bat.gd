@@ -27,8 +27,5 @@ func _physics_process(_delta: float) -> void:
 			if normal.y != 0:
 				direction.y = -direction.y
 			velocity = direction * speed
-		break
-
-
-func _process(_delta: float) -> void:
-	$AnimatedSprite2D.flip_h = direction.x < 0
+			$AnimatedSprite2D.flip_h = direction.x < 0
+			break
