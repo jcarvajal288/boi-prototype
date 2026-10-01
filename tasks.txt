@@ -12,3 +12,8 @@ x cull bullets that hit walls/edge of map
 + add bat enemy
     x bat bounces diagonally off walls
     x flip bat sprite when moving left
+    _ bat dies when shot
++ Doors
+    x add doors to rooms
+    _ open doors when all enemies are dead
+    _ close doors after spawning enemies on room entrance
